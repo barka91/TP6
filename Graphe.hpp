@@ -25,7 +25,7 @@ class Graphe{
         void symetrise();
         vector<Sommet*> getSommets();
         vector<Arete*> getAretes();
-        //kruskal();
+        Graphe* kruskal();
         
 };
 

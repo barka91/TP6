@@ -76,19 +76,19 @@ int Graphe::find(Arete* a){
 
     
     for (unsigned int i = 0; i < aretes.size(); i++){
-        cout<<"_______ find "<<i+1<<"_______"<<endl;
+        // cout<<"_______ find "<<i+1<<"_______"<<endl;
         
         cout<<getAretes()[i]->getGauche()<<endl;
         cout<<getAretes()[i]->getDroite()<<endl;
         cout<<getAretes()[i]->getPoids()<<endl;
 
         if ( getAretes()[i]->getDroite()==d && getAretes()[i]->getGauche()==g && getAretes()[i]->getPoids()==p){
-            cout<<"_______ find 000 _______"<<endl;
+            // cout<<"_______ find 000 _______"<<endl;
             return 0;
         }
         
     }
-    cout<<"_______ find ---111 _______"<<endl;
+    // cout<<"_______ find ---111 _______"<<endl;
     return -1;
 }
 
@@ -97,22 +97,26 @@ void Graphe::symetrise(){
         
         Arete *sym = new Arete( getAretes()[i]->getDroite() , getAretes()[i]->getGauche() , getAretes()[i]->getPoids());
 
-        cout<<"sujet "<<i<<endl;
+        // cout<<"sujet "<<i<<endl;
         
         
         if ( find(sym) == -1 ) {
-            cout<<"bizarre, ajoute sym dans aretes : "<<sym<<endl;
+            cout<<"bizarre, on ajoute sym dans aretes : "<<sym<<endl;
             ajoute_arete(sym);
         }
-              
         else cout<<"ok: "<<aretes[i]<<endl;
-
-        
-            
     }
-    
-    
+   
 }
+
+// Graphe* Graphe::kruskal(){
+//     Graphe *res = new Graphe({},{});
+//    
+
+
+//     return res;
+
+// }
 
 vector<Sommet*> Graphe::getSommets(){ return sommets;}
 vector<Arete*> Graphe::getAretes(){ return aretes;}

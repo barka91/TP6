@@ -11,7 +11,7 @@ Arete::Arete(string etiquette1, string etiquette2, int p) : gauche{new Sommet{et
 Arete::Arete(const Arete &a) : poids{a.poids} {
     gauche = a.gauche;
     droite = a.droite;
-    cout << "Copie de "<< *this;
+    cout << "Copie de "<< *this<<endl;
 }
 
 Arete::Arete(Sommet *g, Sommet *d, int p) : poids{p} {
@@ -20,6 +20,10 @@ Arete::Arete(Sommet *g, Sommet *d, int p) : poids{p} {
 
     droite = d;
     cout << "Construction de " << *this ;
+}
+
+Arete::~Arete(){
+    cout<<"Destruction de l'arete "<< *this<<endl;
 }
 
 Sommet* Arete::getDroite(){ return droite ;}
