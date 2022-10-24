@@ -14,9 +14,11 @@ Arete::Arete(const Arete &a) : poids{a.poids} {
     cout << "Copie de "<< *this;
 }
 
-Arete::Arete(Sommet g, Sommet d, int p) : poids{p} {
-    gauche = &g;
-    droite = &d;
+Arete::Arete(Sommet *g, Sommet *d, int p) : poids{p} {
+    gauche = g;
+    cout<<"coco "<<g<<endl;
+
+    droite = d;
     cout << "Construction de " << *this ;
 }
 
@@ -26,7 +28,7 @@ int Arete::getPoids(){ return poids; }
 void Arete::setPoids(int p){ poids = p ;}
 
 ostream& operator<<( ostream& out , Arete &a){
-    out<<"Arete("<< a.getPoids() <<"):\nGauche->"<< *(a.getGauche()) << "Droite->" << *(a.getDroite()) <<endl ;
+    out<<"Arete("<< a.getPoids() <<"):\nGauche-> "<< (a.getGauche()) << " Droite-> " << (a.getDroite()) <<endl ;
     return out ;
 }
 
